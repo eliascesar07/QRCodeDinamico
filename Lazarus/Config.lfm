@@ -1,0 +1,297 @@
+object frConfig: TfrConfig
+  Left = 489
+  Height = 229
+  Top = 390
+  Width = 700
+  AutoSize = True
+  BorderStyle = bsDialog
+  Caption = 'Configurações'
+  ClientHeight = 229
+  ClientWidth = 700
+  Color = 16510433
+  OnShow = FormShow
+  Position = poOwnerFormCenter
+  LCLVersion = '2.2.2.0'
+  object pnConfigPIX: TPanel
+    Left = 0
+    Height = 165
+    Top = 0
+    Width = 700
+    Align = alClient
+    Anchors = []
+    AutoSize = True
+    BevelOuter = bvNone
+    ClientHeight = 165
+    ClientWidth = 700
+    TabOrder = 0
+    object pnConfigHeader: TPanel
+      Left = 0
+      Height = 131
+      Top = 15
+      Width = 700
+      Align = alTop
+      AutoSize = True
+      BorderSpacing.Top = 15
+      BevelOuter = bvNone
+      ClientHeight = 131
+      ClientWidth = 700
+      TabOrder = 0
+      object gbLog: TGroupBox
+        Left = 353
+        Height = 131
+        Top = 0
+        Width = 317
+        Align = alRight
+        AutoSize = True
+        BorderSpacing.Right = 30
+        Caption = 'Log'
+        ClientHeight = 111
+        ClientWidth = 313
+        TabOrder = 1
+        object pnLog: TPanel
+          Left = 0
+          Height = 111
+          Top = 0
+          Width = 313
+          Align = alClient
+          BevelOuter = bvNone
+          ClientHeight = 111
+          ClientWidth = 313
+          TabOrder = 0
+          object lbLogArquivo: TLabel
+            AnchorSideLeft.Control = cbLogNivel
+            AnchorSideTop.Control = cbLogNivel
+            AnchorSideTop.Side = asrBottom
+            Left = 8
+            Height = 15
+            Top = 58
+            Width = 42
+            BorderSpacing.Top = 10
+            Caption = 'Arquivo'
+            ParentColor = False
+          end
+          object edLogArquivo: TEdit
+            AnchorSideLeft.Control = lbLogArquivo
+            AnchorSideTop.Control = lbLogArquivo
+            AnchorSideTop.Side = asrBottom
+            Left = 8
+            Height = 23
+            Top = 73
+            Width = 290
+            BorderSpacing.Bottom = 15
+            TabOrder = 1
+          end
+          object lbLogNivel: TLabel
+            AnchorSideLeft.Control = pnLog
+            AnchorSideTop.Control = pnLog
+            Left = 8
+            Height = 15
+            Top = 10
+            Width = 27
+            BorderSpacing.Left = 8
+            BorderSpacing.Top = 10
+            Caption = 'Nível'
+            ParentColor = False
+          end
+          object cbLogNivel: TComboBox
+            AnchorSideLeft.Control = lbLogNivel
+            AnchorSideTop.Control = lbLogNivel
+            AnchorSideTop.Side = asrBottom
+            Left = 8
+            Height = 23
+            Top = 25
+            Width = 290
+            BorderSpacing.Right = 15
+            ItemHeight = 15
+            ItemIndex = 2
+            Items.Strings = (
+              'Nenhum'
+              'Baixo'
+              'Normal'
+              'Alto'
+              'Muito Alto'
+            )
+            Style = csDropDownList
+            TabOrder = 0
+            Text = 'Normal'
+          end
+        end
+      end
+      object gbRecebedor: TGroupBox
+        Left = 30
+        Height = 131
+        Top = 0
+        Width = 323
+        Align = alClient
+        BorderSpacing.Left = 30
+        Caption = 'Loja'
+        ClientHeight = 111
+        ClientWidth = 319
+        TabOrder = 0
+        object pnRecebedor: TPanel
+          Left = 0
+          Height = 111
+          Top = 0
+          Width = 319
+          Align = alClient
+          BevelOuter = bvNone
+          ClientHeight = 111
+          ClientWidth = 319
+          TabOrder = 0
+          object lbRecebedorNome: TLabel
+            AnchorSideLeft.Control = pnRecebedor
+            AnchorSideTop.Control = pnRecebedor
+            Left = 15
+            Height = 15
+            Top = 10
+            Width = 33
+            BorderSpacing.Left = 15
+            BorderSpacing.Top = 10
+            Caption = 'Nome'
+            ParentColor = False
+          end
+          object edRecebedorNome: TEdit
+            AnchorSideLeft.Control = lbRecebedorNome
+            AnchorSideTop.Control = lbRecebedorNome
+            AnchorSideTop.Side = asrBottom
+            Left = 15
+            Height = 23
+            Top = 25
+            Width = 296
+            Anchors = [akTop, akLeft, akRight]
+            BorderSpacing.Bottom = 15
+            TabOrder = 0
+          end
+          object lbRecebedorCidade: TLabel
+            AnchorSideLeft.Control = edRecebedorNome
+            AnchorSideTop.Control = edRecebedorNome
+            AnchorSideTop.Side = asrBottom
+            Left = 15
+            Height = 15
+            Top = 63
+            Width = 37
+            BorderSpacing.Top = 10
+            Caption = 'Cidade'
+            ParentColor = False
+          end
+          object edRecebedorCidade: TEdit
+            AnchorSideLeft.Control = lbRecebedorCidade
+            AnchorSideTop.Control = lbRecebedorCidade
+            AnchorSideTop.Side = asrBottom
+            Left = 15
+            Height = 23
+            Top = 78
+            Width = 296
+            TabOrder = 1
+          end
+        end
+      end
+    end
+  end
+  object pnRodape: TPanel
+    Left = 0
+    Height = 49
+    Top = 180
+    Width = 700
+    Align = alBottom
+    BorderSpacing.Top = 15
+    BevelOuter = bvNone
+    ClientHeight = 49
+    ClientWidth = 700
+    Color = 15914423
+    ParentColor = False
+    TabOrder = 1
+    object btSalvar: TSpeedButton
+      Left = 360
+      Height = 49
+      Top = 0
+      Width = 170
+      Align = alRight
+      Caption = '&Salvar'
+      Flat = True
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000005000000390000007F000000A3000000A20000
+        007B000000360000000300000000000000000000000000000000000000000000
+        00000000000000000018000000AC000000F6000000FF000000FF000000FF0000
+        00FF000000F4000000A400000014000000000000000000000000000000000000
+        000000000018000000CE000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000C6000000120000000000000000000000000000
+        0005000000AC000000FF000000FF000000FF000000DD000000F9000000FF0000
+        00FF000000FF000000FF000000FF000000A00000000300000000000000000000
+        0039000000F6000000FF000000FF000000B70000001800000078000000FC0000
+        00FF000000FF000000FF000000FF000000F20000003000000000000000000000
+        007F000000FF000000FF000000B9000000170000003E0000000C0000007C0000
+        00FB000000FF000000FF000000FF000000FF0000007000000000000000000000
+        00A3000000FF000000C20000001100000062000000F20000009E000000070000
+        007C000000FC000000FF000000FF000000FF0000009600000000000000000000
+        00A2000000FF000000CB0000006F000000FA000000FF000000FF0000009E0000
+        000C00000078000000F9000000FF000000FF0000009400000000000000000000
+        007B000000FF000000FF000000FF000000FF000000FF000000FF000000FD0000
+        009B0000000E00000078000000FC000000FF0000006D00000000000000000000
+        0036000000F4000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FD0000009B0000000C000000A2000000F00000002C00000000000000000000
+        0003000000A4000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FD000000B2000000EF000000980000000200000000000000000000
+        000000000014000000C6000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000BD0000000E0000000000000000000000000000
+        00000000000000000012000000A0000000F2000000FF000000FF000000FF0000
+        00FF000000F0000000980000000E000000000000000000000000000000000000
+        0000000000000000000000000003000000300000007000000095000000940000
+        006D0000002C0000000200000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000
+      }
+      OnClick = btSalvarClick
+    end
+    object btCancelar: TSpeedButton
+      Left = 530
+      Height = 49
+      Top = 0
+      Width = 170
+      Align = alRight
+      Caption = 'Cancelar'
+      Flat = True
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000005000000390000007F000000A3000000A20000
+        007C000000360000000400000000000000000000000000000000000000000000
+        00000000000000000019000000AC000000F6000000FF000000FF000000FF0000
+        00FF000000F4000000A500000014000000000000000000000000000000000000
+        000000000019000000CF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000C6000000130000000000000000000000000000
+        0005000000AC000000FF000000FE000000DA000000FC000000FF000000FF0000
+        00FB000000DB000000FE000000FF000000A00000000300000000000000000000
+        0039000000F6000000FF000000DA0000001C0000008E000000FC000000FB0000
+        008300000020000000E2000000FF000000F20000003000000000000000000000
+        007F000000FF000000FF000000FC0000008E000000100000008E000000820000
+        001000000099000000FD000000FF000000FF0000007100000000000000000000
+        00A3000000FF000000FF000000FF000000FC0000008E0000000B0000000B0000
+        009A000000FD000000FF000000FF000000FF0000009600000000000000000000
+        00A2000000FF000000FF000000FF000000FB000000820000000B0000000B0000
+        008E000000FC000000FF000000FF000000FF0000009400000000000000000000
+        007C000000FF000000FF000000FB00000083000000100000009A0000008E0000
+        00100000008E000000FC000000FF000000FF0000006E00000000000000000000
+        0036000000F4000000FF000000DB0000002000000099000000FD000000FC0000
+        008E00000024000000E3000000FF000000F00000002C00000000000000000000
+        0004000000A5000000FF000000FE000000E2000000FD000000FF000000FF0000
+        00FC000000E3000000FE000000FF000000990000000200000000000000000000
+        000000000014000000C7000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000BE0000000F0000000000000000000000000000
+        00000000000000000013000000A0000000F2000000FF000000FF000000FF0000
+        00FF000000F0000000990000000F000000000000000000000000000000000000
+        0000000000000000000000000003000000300000007100000095000000940000
+        006E0000002C0000000200000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000
+      }
+      OnClick = btCancelarClick
+    end
+  end
+end
