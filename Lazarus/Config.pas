@@ -61,22 +61,49 @@ type
 
   TfrConfig = class(TForm)
     btCancelar: TSpeedButton;
+    btArqChavePrivada: TSpeedButton;
+    btArqCertificado: TSpeedButton;
     btSalvar: TSpeedButton;
     cbLogNivel: TComboBox;
+    edItauChavePIX: TEdit;
+    edItauClientID: TEdit;
+    edItauClientSecret: TEdit;
+    edItauArqChavePrivada: TEdit;
+    edItauArqCertificado: TEdit;
     edLogArquivo: TEdit;
+    edBBChavePIX: TEdit;
+    edBBClientID: TEdit;
+    edBBClientSecret: TEdit;
+    edBBDevAppKey: TEdit;
     edRecebedorCidade: TEdit;
     edRecebedorNome: TEdit;
     gbLog: TGroupBox;
+    gbPSPBancoDoBrasil: TGroupBox;
+    gbPSPItau: TGroupBox;
     gbRecebedor: TGroupBox;
+    lbBBChavePIX: TLabel;
+    lbItauChavePIX: TLabel;
+    lbBBClientID: TLabel;
+    lbItauClientID: TLabel;
+    lbBBClientSecret: TLabel;
+    lbItauClientSecret: TLabel;
+    lbBBDevAppKey: TLabel;
+    lbItauArqChavePrivada: TLabel;
+    lbItauArqCertificado: TLabel;
     lbLogArquivo: TLabel;
     lbLogNivel: TLabel;
     lbRecebedorCidade: TLabel;
     lbRecebedorNome: TLabel;
+    OpenDialog1: TOpenDialog;
+    pnPSPItau: TPanel;
     pnRecebedor: TPanel;
     pnLog: TPanel;
     pnConfigHeader: TPanel;
     pnConfigPIX: TPanel;
+    pnBancoDoBrasil: TPanel;
     pnRodape: TPanel;
+    procedure btArqCertificadoClick(Sender: TObject);
+    procedure btArqChavePrivadaClick(Sender: TObject);
     procedure btCancelarClick(Sender: TObject);
     procedure btSalvarClick(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
@@ -96,7 +123,7 @@ var
 implementation
 
 uses
-  PDV, IniFiles, ACBrUtil.Base;
+  IniFiles, ACBrUtil.Base;
 
 {$R *.lfm}
 
@@ -193,6 +220,20 @@ begin
   ModalResult := mrCancel;
 end;
 
+procedure TfrConfig.btArqChavePrivadaClick(Sender: TObject);
+begin
+  OpenDialog1.FileName := edItauArqChavePrivada.Text;
+  if OpenDialog1.Execute then
+    edItauArqChavePrivada.Text := OpenDialog1.FileName;
+end;
+
+procedure TfrConfig.btArqCertificadoClick(Sender: TObject);
+begin
+  OpenDialog1.FileName := edItauArqCertificado.Text;
+  if OpenDialog1.Execute then
+    edItauArqCertificado.Text := OpenDialog1.FileName;
+end;
+
 procedure TfrConfig.btSalvarClick(Sender: TObject);
 begin
   ValidarCampos;
@@ -202,6 +243,19 @@ begin
 
   PDVConfig.LogNivel := cbLogNivel.ItemIndex;
   PDVConfig.LogArquivo := edLogArquivo.Text;
+
+  //Banco do Brasil
+  {frPDV.ConfigPix.ChavePix := edBBChavePIX.Text;
+  frPDV.ConfigPix.ClientID := edBBClientID.Text;
+  frPDV.ConfigPix.ClientSecret := edBBClientSecret.Text;
+  frPDV.ConfigPix.DeveloperAppKey := edBBDevAppKey.Text;}
+
+  // Itaú
+  PDVConfig.ChavePix := edItauChavePIX.Text;
+  PDVConfig.ClientID := edItauClientID.Text;
+  PDVConfig.ClientSecret := edItauClientSecret.Text;
+  PDVConfig.ArqChavePrivada := edItauArqChavePrivada.Text;
+  PDVConfig.ArqCertificado := edItauArqCertificado.Text;
 
   PDVConfig.GravarConfig;
   ModalResult := mrOK;
@@ -222,6 +276,17 @@ begin
 
   cbLogNivel.ItemIndex := PDVConfig.LogNivel;
   edLogArquivo.Text := PDVConfig.LogArquivo;
+
+  edBBChavePIX.Text := PDVConfig.ChavePix;
+  edBBClientID.Text := PDVConfig.ClientID;
+  edBBClientSecret.Text := PDVConfig.ClientSecret;
+  edBBDevAppKey.Text := PDVConfig.DeveloperAppKey;
+
+  edItauChavePIX.Text := PDVConfig.ChavePix;
+  edItauClientID.Text := PDVConfig.ClientID;
+  edItauClientSecret.Text := PDVConfig.ClientSecret;
+  edItauArqChavePrivada.Text := PDVConfig.ArqChavePrivada;
+  edItauArqCertificado.Text := PDVConfig.ArqCertificado;
 end;
 
 function TfrConfig.GetPDVConfig: TPDVConfig;
@@ -247,6 +312,10 @@ begin
   try
     ValidarCampo('Nome do Recebedor', edRecebedorNome);
     ValidarCampo('Cidade do Recebedor', edRecebedorCidade);
+    ValidarCampo('Chave PIX', edBBChavePIX);
+    ValidarCampo('ClientID', edBBClientID);
+    ValidarCampo('ClientSecret', edBBClientSecret);
+    ValidarCampo('DeveloperAppKey', edBBDevAppKey);
 
     if (wErros.Count > 0) then
     begin

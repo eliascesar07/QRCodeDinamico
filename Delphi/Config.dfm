@@ -1,10 +1,10 @@
 object frConfig: TfrConfig
-  Left = 489
-  Top = 390
+  Left = 415
+  Top = 152
   AutoSize = True
   BorderStyle = bsDialog
   Caption = 'Configura'#231#245'es'
-  ClientHeight = 229
+  ClientHeight = 644
   ClientWidth = 700
   Color = 16510433
   Font.Charset = DEFAULT_CHARSET
@@ -14,6 +14,7 @@ object frConfig: TfrConfig
   Font.Style = []
   OldCreateOrder = True
   Position = poOwnerFormCenter
+  OnDestroy = FormDestroy
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
@@ -21,13 +22,101 @@ object frConfig: TfrConfig
     Left = 0
     Top = 0
     Width = 700
-    Height = 180
+    Height = 595
     Align = alClient
     Anchors = []
     AutoSize = True
     BevelOuter = bvNone
-    ParentColor = True
     TabOrder = 0
+    object gbPSPBancoDoBrasil: TGroupBox
+      Left = 0
+      Top = 131
+      Width = 700
+      Height = 179
+      Align = alTop
+      Caption = 'PSP Banco do Brasil'
+      TabOrder = 1
+      object pnBancoDoBrasil: TPanel
+        Left = 2
+        Top = 15
+        Width = 696
+        Height = 162
+        Align = alClient
+        BevelOuter = bvNone
+        TabOrder = 0
+        DesignSize = (
+          696
+          162)
+        object lbBBChavePIX: TLabel
+          Left = 15
+          Top = 10
+          Width = 51
+          Height = 13
+          Caption = 'Chave PIX'
+          Color = clBtnFace
+          ParentColor = False
+        end
+        object lbBBClientID: TLabel
+          Left = 331
+          Top = 10
+          Width = 40
+          Height = 13
+          Anchors = [akLeft, akBottom]
+          Caption = 'Client ID'
+          Color = clBtnFace
+          ParentColor = False
+        end
+        object lbBBClientSecret: TLabel
+          Left = 15
+          Top = 58
+          Width = 60
+          Height = 13
+          Caption = 'Client Secret'
+          Color = clBtnFace
+          ParentColor = False
+        end
+        object lbBBDevAppKey: TLabel
+          Left = 15
+          Top = 106
+          Width = 125
+          Height = 13
+          Caption = 'Developer Application Key'
+          Color = clBtnFace
+          ParentColor = False
+        end
+        object edBBChavePIX: TEdit
+          Left = 15
+          Top = 25
+          Width = 296
+          Height = 21
+          TabOrder = 0
+        end
+        object edBBClientID: TEdit
+          Left = 331
+          Top = 25
+          Width = 290
+          Height = 21
+          PasswordChar = '*'
+          TabOrder = 1
+        end
+        object edBBClientSecret: TEdit
+          Left = 15
+          Top = 73
+          Width = 606
+          Height = 21
+          PasswordChar = '*'
+          TabOrder = 2
+        end
+        object edBBDevAppKey: TEdit
+          Left = 15
+          Top = 121
+          Width = 606
+          Height = 21
+          PasswordChar = '*'
+          TabOrder = 3
+        end
+      end
+    end
     object pnConfigHeader: TPanel
       Left = 0
       Top = 0
@@ -36,7 +125,6 @@ object frConfig: TfrConfig
       Align = alTop
       AutoSize = True
       BevelOuter = bvNone
-      ParentColor = True
       TabOrder = 0
       object gbLog: TGroupBox
         Left = 383
@@ -53,7 +141,6 @@ object frConfig: TfrConfig
           Height = 114
           Align = alClient
           BevelOuter = bvNone
-          ParentColor = True
           TabOrder = 0
           object lbLogArquivo: TLabel
             Left = 8
@@ -105,7 +192,7 @@ object frConfig: TfrConfig
         Width = 383
         Height = 131
         Align = alClient
-        Caption = 'Loja'
+        Caption = 'Recebedor'
         TabOrder = 0
         object pnRecebedor: TPanel
           Left = 2
@@ -114,7 +201,6 @@ object frConfig: TfrConfig
           Height = 114
           Align = alClient
           BevelOuter = bvNone
-          ParentColor = True
           TabOrder = 0
           DesignSize = (
             379
@@ -155,10 +241,218 @@ object frConfig: TfrConfig
         end
       end
     end
+    object gbPSPItau: TGroupBox
+      Left = 0
+      Top = 310
+      Width = 700
+      Height = 227
+      Align = alTop
+      Caption = 'PSP Ita'#250
+      TabOrder = 2
+      object pnPSPItau: TPanel
+        Left = 2
+        Top = 15
+        Width = 696
+        Height = 210
+        Align = alClient
+        BevelOuter = bvNone
+        TabOrder = 0
+        DesignSize = (
+          696
+          210)
+        object lbItauChavePIX: TLabel
+          Left = 15
+          Top = 10
+          Width = 51
+          Height = 13
+          Caption = 'Chave PIX'
+          Color = clBtnFace
+          ParentColor = False
+        end
+        object lbItauClientID: TLabel
+          Left = 331
+          Top = 10
+          Width = 40
+          Height = 13
+          Anchors = [akLeft, akBottom]
+          Caption = 'Client ID'
+          Color = clBtnFace
+          ParentColor = False
+        end
+        object lbItauClientSecret: TLabel
+          Left = 15
+          Top = 58
+          Width = 60
+          Height = 13
+          Caption = 'Client Secret'
+          Color = clBtnFace
+          ParentColor = False
+        end
+        object lbItauArqChavePrivada: TLabel
+          Left = 15
+          Top = 106
+          Width = 109
+          Height = 13
+          Caption = 'Arquivo Chave Privada'
+          Color = clBtnFace
+          ParentColor = False
+        end
+        object lbItauArqCertificado: TLabel
+          Left = 15
+          Top = 154
+          Width = 89
+          Height = 13
+          Caption = 'Arquivo Certificado'
+          Color = clBtnFace
+          ParentColor = False
+        end
+        object btArqChavePrivada: TSpeedButton
+          Left = 597
+          Top = 121
+          Width = 24
+          Height = 23
+          Hint = 'Abrir Arquivo de Log'
+          Flat = True
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = []
+          Glyph.Data = {
+            36040000424D3604000000000000360000002800000010000000100000000100
+            2000000000000004000064000000640000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0005000000430000005500000055000000550000005500000055000000550000
+            0055000000550000005500000055000000400000000400000000000000000000
+            0031000000F6000000FF000000FF000000FF000000FF000000FF000000FF0000
+            00FF000000FF000000FF000000FF000000F30000002E00000000000000000000
+            0038000000FF000000C000000071000000710000007100000071000000710000
+            00710000007100000071000000C0000000FF0000003800000000000000000000
+            0038000000FF0000008E00000000000000000000000000000000000000000000
+            000000000000000000000000008E000000FF0000003800000000000000000000
+            0038000000FF0000008E00000000000000000000000000000000000000000000
+            000000000000000000000000008E000000FF0000003800000000000000000000
+            0038000000FF0000008E00000000000000000000000000000000000000000000
+            000000000000000000000000008E000000FF0000003800000000000000000000
+            0038000000FF0000008E00000000000000000000000000000000000000000000
+            000000000000000000000000008E000000FF0000003800000000000000000000
+            0038000000FF000000A700000038000000380000003800000038000000380000
+            00380000003800000038000000A7000000FF0000003800000000000000000000
+            0038000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+            00FF000000FF000000FF000000FF000000FA0000003300000000000000000000
+            0038000000FF000000FF000000FF000000FF000000FF000000FF000000D60000
+            008E0000008E0000008E0000008E000000680000000800000000000000000000
+            002F000000F3000000FF000000FF000000FF000000FF000000CF000000160000
+            0000000000000000000000000000000000000000000000000000000000000000
+            00040000003D0000005500000055000000550000005500000019000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000}
+          ParentFont = False
+          ParentShowHint = False
+          ShowHint = True
+          OnClick = btArqChavePrivadaClick
+        end
+        object btArqCertificado: TSpeedButton
+          Left = 597
+          Top = 169
+          Width = 24
+          Height = 23
+          Hint = 'Abrir Arquivo de Log'
+          Flat = True
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = []
+          Glyph.Data = {
+            36040000424D3604000000000000360000002800000010000000100000000100
+            2000000000000004000064000000640000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0005000000430000005500000055000000550000005500000055000000550000
+            0055000000550000005500000055000000400000000400000000000000000000
+            0031000000F6000000FF000000FF000000FF000000FF000000FF000000FF0000
+            00FF000000FF000000FF000000FF000000F30000002E00000000000000000000
+            0038000000FF000000C000000071000000710000007100000071000000710000
+            00710000007100000071000000C0000000FF0000003800000000000000000000
+            0038000000FF0000008E00000000000000000000000000000000000000000000
+            000000000000000000000000008E000000FF0000003800000000000000000000
+            0038000000FF0000008E00000000000000000000000000000000000000000000
+            000000000000000000000000008E000000FF0000003800000000000000000000
+            0038000000FF0000008E00000000000000000000000000000000000000000000
+            000000000000000000000000008E000000FF0000003800000000000000000000
+            0038000000FF0000008E00000000000000000000000000000000000000000000
+            000000000000000000000000008E000000FF0000003800000000000000000000
+            0038000000FF000000A700000038000000380000003800000038000000380000
+            00380000003800000038000000A7000000FF0000003800000000000000000000
+            0038000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+            00FF000000FF000000FF000000FF000000FA0000003300000000000000000000
+            0038000000FF000000FF000000FF000000FF000000FF000000FF000000D60000
+            008E0000008E0000008E0000008E000000680000000800000000000000000000
+            002F000000F3000000FF000000FF000000FF000000FF000000CF000000160000
+            0000000000000000000000000000000000000000000000000000000000000000
+            00040000003D0000005500000055000000550000005500000019000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000}
+          ParentFont = False
+          ParentShowHint = False
+          ShowHint = True
+          OnClick = btArqCertificadoClick
+        end
+        object edItauChavePIX: TEdit
+          Left = 15
+          Top = 25
+          Width = 296
+          Height = 21
+          TabOrder = 0
+        end
+        object edItauClientID: TEdit
+          Left = 331
+          Top = 25
+          Width = 290
+          Height = 21
+          PasswordChar = '*'
+          TabOrder = 1
+        end
+        object edItauClientSecret: TEdit
+          Left = 15
+          Top = 73
+          Width = 606
+          Height = 21
+          PasswordChar = '*'
+          TabOrder = 2
+        end
+        object edItauArqChavePrivada: TEdit
+          Left = 15
+          Top = 121
+          Width = 582
+          Height = 21
+          TabOrder = 3
+        end
+        object edItauArqCertificado: TEdit
+          Left = 15
+          Top = 169
+          Width = 582
+          Height = 21
+          TabOrder = 4
+        end
+      end
+    end
   end
   object pnRodape: TPanel
     Left = 0
-    Top = 180
+    Top = 595
     Width = 700
     Height = 49
     Align = alBottom
@@ -253,5 +547,9 @@ object frConfig: TfrConfig
         0000000000000000000000000000000000000000000000000000}
       OnClick = btCancelarClick
     end
+  end
+  object OpenDialog1: TOpenDialog
+    Left = 152
+    Top = 16
   end
 end

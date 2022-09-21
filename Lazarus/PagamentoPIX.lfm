@@ -1,0 +1,269 @@
+object frPagamentoPIX: TfrPagamentoPIX
+  Left = 394
+  Height = 492
+  Top = 158
+  Width = 589
+  AutoSize = True
+  ClientHeight = 492
+  ClientWidth = 589
+  Color = 16510433
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  Position = poOwnerFormCenter
+  LCLVersion = '2.2.2.0'
+  object pnStatusCobranca: TPanel
+    Left = 0
+    Height = 64
+    Top = 0
+    Width = 589
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'AGUARDANDO PAGAMENTO...'
+    Color = 16760704
+    Font.Color = clWhite
+    Font.Height = -27
+    Font.Name = 'Noto Sans'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 0
+  end
+  object pnBody: TPanel
+    Left = 0
+    Height = 428
+    Top = 64
+    Width = 589
+    Align = alClient
+    AutoSize = True
+    BevelOuter = bvNone
+    ClientHeight = 428
+    ClientWidth = 589
+    TabOrder = 1
+    object pnConsultarErro: TPanel
+      Left = 0
+      Height = 428
+      Top = 0
+      Width = 589
+      Align = alClient
+      BevelOuter = bvNone
+      ClientHeight = 428
+      ClientWidth = 589
+      TabOrder = 1
+      Visible = False
+      object btTentarNovamente: TSpeedButton
+        Left = 30
+        Height = 85
+        Top = 80
+        Width = 529
+        Action = aTentarNovamente
+        Align = alTop
+        BorderSpacing.Left = 30
+        BorderSpacing.Top = 80
+        BorderSpacing.Right = 30
+        BorderSpacing.Bottom = 50
+        Flat = True
+        Font.Color = 5197647
+        Font.Height = -20
+        Font.Name = 'Noto Sans'
+        Font.Style = [fsBold]
+        ImageIndex = 4
+        Spacing = 15
+        ParentFont = False
+      end
+      object bt: TSpeedButton
+        Left = 30
+        Height = 85
+        Top = 215
+        Width = 529
+        Action = aCancelarCobranca
+        Align = alTop
+        BorderSpacing.Left = 30
+        BorderSpacing.Right = 30
+        Flat = True
+        Font.Color = 5197647
+        Font.Height = -20
+        Font.Name = 'Noto Sans'
+        Font.Style = [fsBold]
+        ImageIndex = 5
+        Spacing = 15
+        ParentFont = False
+      end
+    end
+    object pnCobrancaInfo: TPanel
+      Left = 0
+      Height = 428
+      Top = 0
+      Width = 589
+      Align = alClient
+      BevelOuter = bvNone
+      ClientHeight = 428
+      ClientWidth = 589
+      TabOrder = 0
+      object imQRCodePIX: TImage
+        Left = 60
+        Height = 299
+        Top = 20
+        Width = 469
+        Align = alClient
+        BorderSpacing.Left = 60
+        BorderSpacing.Top = 20
+        BorderSpacing.Right = 60
+        BorderSpacing.Bottom = 20
+        Center = True
+        Constraints.MinHeight = 280
+        Proportional = True
+        Stretch = True
+      end
+      object pnCopiaECola: TPanel
+        Left = 0
+        Height = 89
+        Top = 339
+        Width = 589
+        Align = alBottom
+        BevelOuter = bvNone
+        ClientHeight = 89
+        ClientWidth = 589
+        TabOrder = 0
+        object lbCopiaECola: TLabel
+          AnchorSideLeft.Control = edCopiaECola
+          AnchorSideBottom.Control = edCopiaECola
+          Left = 25
+          Height = 15
+          Top = 17
+          Width = 92
+          Anchors = [akLeft, akBottom]
+          BorderSpacing.Top = 15
+          Caption = 'PIX Copia e Cola'
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object edCopiaECola: TEdit
+          AnchorSideLeft.Control = pnCopiaECola
+          AnchorSideRight.Side = asrBottom
+          AnchorSideBottom.Control = pnCopiaECola
+          AnchorSideBottom.Side = asrBottom
+          Left = 25
+          Height = 27
+          Top = 32
+          Width = 511
+          Alignment = taCenter
+          Anchors = [akLeft, akBottom]
+          BorderSpacing.Left = 25
+          BorderSpacing.Bottom = 30
+          Font.Height = -17
+          Font.Name = 'Arial'
+          ParentFont = False
+          TabOrder = 0
+        end
+        object btCopiaECola: TSpeedButton
+          AnchorSideLeft.Control = edCopiaECola
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = edCopiaECola
+          AnchorSideTop.Side = asrCenter
+          Left = 536
+          Height = 27
+          Top = 32
+          Width = 27
+          BorderSpacing.Right = 25
+          Flat = True
+          Glyph.Data = {
+            36040000424D3604000000000000360000002800000010000000100000000100
+            2000000000000004000064000000640000000000000000000000000000000000
+            0000000000000000000000000016000000570000005B0000005B0000005B0000
+            005B0000005B0000005B00000058000000370000000000000000000000000000
+            0000000000000000000B000000D4000000E8000000DC000000DC000000DC0000
+            00DC000000DC000000DC000000E8000000FF0000001800000000000000000000
+            0000000000000000001C000000E3000000550000000000000000000000000000
+            0000000000000000000000000058000000FC0000002300000000000000000000
+            0000000000000000001C000000E3000000550000000000000000000000000000
+            0000000000000000000000000058000000FC0000002300000000000000000000
+            00370000003D0000001C000000E3000000550000000000000000000000000000
+            0000000000000000000000000058000000FC0000002300000000000000000000
+            009C000000AF0000001C000000E3000000550000000000000000000000000000
+            0000000000000000000000000058000000FC0000002300000000000000000000
+            009C000000AF0000001C000000E3000000550000000000000000000000000000
+            0000000000000000000000000058000000FC0000002300000000000000000000
+            009C000000AF0000001C000000E3000000550000000000000000000000000000
+            0000000000000000000000000058000000FC0000002300000000000000000000
+            009C000000AF0000001C000000E3000000550000000000000000000000000000
+            0000000000000000000000000058000000FC0000002300000000000000000000
+            009C000000AF0000001C000000E3000000550000000000000000000000000000
+            0000000000000000000000000058000000FC0000002300000000000000000000
+            009C000000AF0000001C000000E3000000550000000000000000000000000000
+            0000000000000000000000000058000000FC0000002300000000000000000000
+            009C000000AF00000010000000D5000000ED000000E4000000E4000000E40000
+            00E4000000E4000000E4000000EE000000FD0000001B00000000000000000000
+            009C000000AF0000000000000044000000A2000000A6000000A6000000A60000
+            00A6000000A6000000A6000000A3000000770000000300000000000000000000
+            009B000000BA0000002300000023000000230000002300000023000000230000
+            0023000000230000000000000000000000000000000000000000000000000000
+            0058000000F4000000FA000000FA000000FA000000FA000000FA000000FA0000
+            00FA000000FA0000000000000000000000000000000000000000000000000000
+            00030000004E0000005B0000005B0000005B0000005B0000005B0000005B0000
+            005B0000005B0000000000000000000000000000000000000000
+          }
+          OnClick = btCopiaEColaClick
+        end
+      end
+      object pbAguardarPagto: TProgressBar
+        AnchorSideLeft.Control = imQRCodePIX
+        AnchorSideLeft.Side = asrCenter
+        AnchorSideTop.Control = imQRCodePIX
+        AnchorSideTop.Side = asrBottom
+        Left = 60
+        Height = 4
+        Top = 339
+        Width = 469
+        Style = pbstMarquee
+        TabOrder = 1
+      end
+    end
+  end
+  object ACBrPixCD1: TACBrPixCD
+    Recebedor.CodCategoriaComerciante = 0
+    Ambiente = ambProducao
+    PSP = ACBrPSPItau1
+    ArqLOG = '_Log.txt'
+    NivelLog = 4
+    Left = 40
+    Top = 80
+  end
+  object ACBrPSPBancoDoBrasil1: TACBrPSPBancoDoBrasil
+    Left = 400
+    Top = 272
+  end
+  object alPagamentoPIX: TActionList
+    Left = 40
+    Top = 160
+    object aFechar: TAction
+      OnExecute = aFecharExecute
+      ShortCut = 27
+    end
+    object aTentarNovamente: TAction
+      Caption = 'F5 - TENTAR NOVAMENTE'
+      ImageIndex = 4
+      OnExecute = aTentarNovamenteExecute
+      ShortCut = 116
+    end
+    object aCancelarCobranca: TAction
+      Caption = 'F4 - CANCELAR COBRANÇA'
+      ImageIndex = 5
+      OnExecute = aCancelarCobrancaExecute
+      ShortCut = 115
+    end
+  end
+  object tmConsultarCobranca: TTimer
+    Enabled = False
+    Interval = 5000
+    OnTimer = tmConsultarCobrancaTimer
+    Left = 152
+    Top = 160
+  end
+  object ACBrPSPItau1: TACBrPSPItau
+    ACBrPixCD = ACBrPixCD1
+    Left = 152
+    Top = 80
+  end
+end

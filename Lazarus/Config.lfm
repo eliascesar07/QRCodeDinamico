@@ -1,29 +1,153 @@
 object frConfig: TfrConfig
-  Left = 489
-  Height = 229
-  Top = 390
+  Left = 415
+  Height = 644
+  Top = 152
   Width = 700
   AutoSize = True
   BorderStyle = bsDialog
   Caption = 'Configurações'
-  ClientHeight = 229
+  ClientHeight = 644
   ClientWidth = 700
   Color = 16510433
+  OnDestroy = FormDestroy
   OnShow = FormShow
   Position = poOwnerFormCenter
   LCLVersion = '2.2.2.0'
   object pnConfigPIX: TPanel
     Left = 0
-    Height = 165
+    Height = 580
     Top = 0
     Width = 700
     Align = alClient
     Anchors = []
     AutoSize = True
     BevelOuter = bvNone
-    ClientHeight = 165
+    ClientHeight = 580
     ClientWidth = 700
     TabOrder = 0
+    object gbPSPBancoDoBrasil: TGroupBox
+      Left = 30
+      Height = 179
+      Top = 161
+      Width = 640
+      Align = alTop
+      AutoSize = True
+      BorderSpacing.Left = 30
+      BorderSpacing.Top = 15
+      BorderSpacing.Right = 30
+      Caption = 'PSP Banco do Brasil'
+      ClientHeight = 159
+      ClientWidth = 636
+      TabOrder = 1
+      object pnBancoDoBrasil: TPanel
+        Left = 0
+        Height = 159
+        Top = 0
+        Width = 636
+        Align = alClient
+        BevelOuter = bvNone
+        ClientHeight = 159
+        ClientWidth = 636
+        TabOrder = 0
+        object edBBChavePIX: TEdit
+          AnchorSideLeft.Control = lbBBChavePIX
+          AnchorSideTop.Control = lbBBChavePIX
+          AnchorSideTop.Side = asrBottom
+          Left = 15
+          Height = 23
+          Top = 25
+          Width = 296
+          TabOrder = 0
+        end
+        object lbBBChavePIX: TLabel
+          AnchorSideLeft.Control = pnBancoDoBrasil
+          AnchorSideTop.Control = pnBancoDoBrasil
+          Left = 15
+          Height = 15
+          Top = 10
+          Width = 53
+          BorderSpacing.Left = 15
+          BorderSpacing.Top = 10
+          Caption = 'Chave PIX'
+          ParentColor = False
+        end
+        object lbBBClientID: TLabel
+          AnchorSideLeft.Control = edBBClientID
+          AnchorSideBottom.Control = edBBClientID
+          Left = 331
+          Height = 15
+          Top = 10
+          Width = 45
+          Anchors = [akLeft, akBottom]
+          Caption = 'Client ID'
+          ParentColor = False
+        end
+        object edBBClientID: TEdit
+          AnchorSideLeft.Control = edBBChavePIX
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = edBBChavePIX
+          AnchorSideTop.Side = asrCenter
+          Left = 331
+          Height = 23
+          Top = 25
+          Width = 290
+          BorderSpacing.Left = 20
+          BorderSpacing.Right = 15
+          EchoMode = emPassword
+          PasswordChar = '*'
+          TabOrder = 1
+        end
+        object lbBBClientSecret: TLabel
+          AnchorSideLeft.Control = edBBChavePIX
+          AnchorSideTop.Control = edBBChavePIX
+          AnchorSideTop.Side = asrBottom
+          Left = 15
+          Height = 15
+          Top = 58
+          Width = 66
+          BorderSpacing.Top = 10
+          Caption = 'Client Secret'
+          ParentColor = False
+        end
+        object edBBClientSecret: TEdit
+          AnchorSideLeft.Control = lbBBClientSecret
+          AnchorSideTop.Control = lbBBClientSecret
+          AnchorSideTop.Side = asrBottom
+          Left = 15
+          Height = 23
+          Top = 73
+          Width = 606
+          EchoMode = emPassword
+          PasswordChar = '*'
+          TabOrder = 2
+        end
+        object lbBBDevAppKey: TLabel
+          AnchorSideLeft.Control = edBBClientSecret
+          AnchorSideTop.Control = edBBClientSecret
+          AnchorSideTop.Side = asrBottom
+          Left = 15
+          Height = 15
+          Top = 106
+          Width = 139
+          BorderSpacing.Top = 10
+          Caption = 'Developer Application Key'
+          ParentColor = False
+        end
+        object edBBDevAppKey: TEdit
+          AnchorSideLeft.Control = lbBBDevAppKey
+          AnchorSideTop.Control = lbBBDevAppKey
+          AnchorSideTop.Side = asrBottom
+          Left = 15
+          Height = 23
+          Top = 121
+          Width = 606
+          BorderSpacing.Bottom = 15
+          EchoMode = emPassword
+          PasswordChar = '*'
+          TabOrder = 3
+        end
+      end
+    end
     object pnConfigHeader: TPanel
       Left = 0
       Height = 131
@@ -124,7 +248,7 @@ object frConfig: TfrConfig
         Width = 323
         Align = alClient
         BorderSpacing.Left = 30
-        Caption = 'Loja'
+        Caption = 'Recebedor'
         ClientHeight = 111
         ClientWidth = 319
         TabOrder = 0
@@ -187,11 +311,258 @@ object frConfig: TfrConfig
         end
       end
     end
+    object gbPSPItau: TGroupBox
+      Left = 30
+      Height = 227
+      Top = 355
+      Width = 640
+      Align = alTop
+      AutoSize = True
+      BorderSpacing.Left = 30
+      BorderSpacing.Top = 15
+      BorderSpacing.Right = 30
+      Caption = 'PSP Itaú'
+      ClientHeight = 207
+      ClientWidth = 636
+      TabOrder = 2
+      object pnPSPItau: TPanel
+        Left = 0
+        Height = 207
+        Top = 0
+        Width = 636
+        Align = alClient
+        BevelOuter = bvNone
+        ClientHeight = 207
+        ClientWidth = 636
+        TabOrder = 0
+        object edItauChavePIX: TEdit
+          AnchorSideLeft.Control = lbItauChavePIX
+          AnchorSideTop.Control = lbItauChavePIX
+          AnchorSideTop.Side = asrBottom
+          Left = 15
+          Height = 23
+          Top = 25
+          Width = 296
+          TabOrder = 0
+        end
+        object lbItauChavePIX: TLabel
+          AnchorSideLeft.Control = pnPSPItau
+          AnchorSideTop.Control = pnPSPItau
+          Left = 15
+          Height = 15
+          Top = 10
+          Width = 53
+          BorderSpacing.Left = 15
+          BorderSpacing.Top = 10
+          Caption = 'Chave PIX'
+          ParentColor = False
+        end
+        object lbItauClientID: TLabel
+          AnchorSideLeft.Control = edItauClientID
+          AnchorSideBottom.Control = edItauClientID
+          Left = 331
+          Height = 15
+          Top = 10
+          Width = 45
+          Anchors = [akLeft, akBottom]
+          Caption = 'Client ID'
+          ParentColor = False
+        end
+        object edItauClientID: TEdit
+          AnchorSideLeft.Control = edItauChavePIX
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = edItauChavePIX
+          AnchorSideTop.Side = asrCenter
+          Left = 331
+          Height = 23
+          Top = 25
+          Width = 290
+          BorderSpacing.Left = 20
+          BorderSpacing.Right = 15
+          EchoMode = emPassword
+          PasswordChar = '*'
+          TabOrder = 1
+        end
+        object lbItauClientSecret: TLabel
+          AnchorSideLeft.Control = edItauChavePIX
+          AnchorSideTop.Control = edItauChavePIX
+          AnchorSideTop.Side = asrBottom
+          Left = 15
+          Height = 15
+          Top = 58
+          Width = 66
+          BorderSpacing.Top = 10
+          Caption = 'Client Secret'
+          ParentColor = False
+        end
+        object edItauClientSecret: TEdit
+          AnchorSideLeft.Control = lbItauClientSecret
+          AnchorSideTop.Control = lbItauClientSecret
+          AnchorSideTop.Side = asrBottom
+          Left = 15
+          Height = 23
+          Top = 73
+          Width = 606
+          EchoMode = emPassword
+          PasswordChar = '*'
+          TabOrder = 2
+        end
+        object lbItauArqChavePrivada: TLabel
+          AnchorSideLeft.Control = edItauClientSecret
+          AnchorSideTop.Control = edItauClientSecret
+          AnchorSideTop.Side = asrBottom
+          Left = 15
+          Height = 15
+          Top = 106
+          Width = 120
+          BorderSpacing.Top = 10
+          Caption = 'Arquivo Chave Privada'
+          ParentColor = False
+        end
+        object edItauArqChavePrivada: TEdit
+          AnchorSideLeft.Control = lbItauArqChavePrivada
+          AnchorSideTop.Control = lbItauArqChavePrivada
+          AnchorSideTop.Side = asrBottom
+          Left = 15
+          Height = 23
+          Top = 121
+          Width = 582
+          TabOrder = 3
+        end
+        object lbItauArqCertificado: TLabel
+          AnchorSideLeft.Control = edItauArqChavePrivada
+          AnchorSideTop.Control = edItauArqChavePrivada
+          AnchorSideTop.Side = asrBottom
+          Left = 15
+          Height = 15
+          Top = 154
+          Width = 103
+          BorderSpacing.Top = 10
+          Caption = 'Arquivo Certificado'
+          ParentColor = False
+        end
+        object edItauArqCertificado: TEdit
+          AnchorSideLeft.Control = lbItauArqCertificado
+          AnchorSideTop.Control = lbItauArqCertificado
+          AnchorSideTop.Side = asrBottom
+          Left = 15
+          Height = 23
+          Top = 169
+          Width = 582
+          BorderSpacing.Bottom = 15
+          TabOrder = 4
+        end
+        object btArqChavePrivada: TSpeedButton
+          AnchorSideLeft.Control = edItauArqChavePrivada
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = edItauArqChavePrivada
+          AnchorSideTop.Side = asrCenter
+          Left = 597
+          Height = 23
+          Hint = 'Abrir Arquivo de Log'
+          Top = 121
+          Width = 24
+          Flat = True
+          Glyph.Data = {
+            36040000424D3604000000000000360000002800000010000000100000000100
+            2000000000000004000064000000640000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0005000000430000005500000055000000550000005500000055000000550000
+            0055000000550000005500000055000000400000000400000000000000000000
+            0031000000F6000000FF000000FF000000FF000000FF000000FF000000FF0000
+            00FF000000FF000000FF000000FF000000F30000002E00000000000000000000
+            0038000000FF000000C000000071000000710000007100000071000000710000
+            00710000007100000071000000C0000000FF0000003800000000000000000000
+            0038000000FF0000008E00000000000000000000000000000000000000000000
+            000000000000000000000000008E000000FF0000003800000000000000000000
+            0038000000FF0000008E00000000000000000000000000000000000000000000
+            000000000000000000000000008E000000FF0000003800000000000000000000
+            0038000000FF0000008E00000000000000000000000000000000000000000000
+            000000000000000000000000008E000000FF0000003800000000000000000000
+            0038000000FF0000008E00000000000000000000000000000000000000000000
+            000000000000000000000000008E000000FF0000003800000000000000000000
+            0038000000FF000000A700000038000000380000003800000038000000380000
+            00380000003800000038000000A7000000FF0000003800000000000000000000
+            0038000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+            00FF000000FF000000FF000000FF000000FA0000003300000000000000000000
+            0038000000FF000000FF000000FF000000FF000000FF000000FF000000D60000
+            008E0000008E0000008E0000008E000000680000000800000000000000000000
+            002F000000F3000000FF000000FF000000FF000000FF000000CF000000160000
+            0000000000000000000000000000000000000000000000000000000000000000
+            00040000003D0000005500000055000000550000005500000019000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000
+          }
+          OnClick = btArqChavePrivadaClick
+          ShowHint = True
+          ParentFont = False
+          ParentShowHint = False
+        end
+        object btArqCertificado: TSpeedButton
+          AnchorSideLeft.Control = edItauArqCertificado
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = edItauArqCertificado
+          AnchorSideTop.Side = asrCenter
+          Left = 597
+          Height = 23
+          Hint = 'Abrir Arquivo de Log'
+          Top = 169
+          Width = 24
+          Flat = True
+          Glyph.Data = {
+            36040000424D3604000000000000360000002800000010000000100000000100
+            2000000000000004000064000000640000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0005000000430000005500000055000000550000005500000055000000550000
+            0055000000550000005500000055000000400000000400000000000000000000
+            0031000000F6000000FF000000FF000000FF000000FF000000FF000000FF0000
+            00FF000000FF000000FF000000FF000000F30000002E00000000000000000000
+            0038000000FF000000C000000071000000710000007100000071000000710000
+            00710000007100000071000000C0000000FF0000003800000000000000000000
+            0038000000FF0000008E00000000000000000000000000000000000000000000
+            000000000000000000000000008E000000FF0000003800000000000000000000
+            0038000000FF0000008E00000000000000000000000000000000000000000000
+            000000000000000000000000008E000000FF0000003800000000000000000000
+            0038000000FF0000008E00000000000000000000000000000000000000000000
+            000000000000000000000000008E000000FF0000003800000000000000000000
+            0038000000FF0000008E00000000000000000000000000000000000000000000
+            000000000000000000000000008E000000FF0000003800000000000000000000
+            0038000000FF000000A700000038000000380000003800000038000000380000
+            00380000003800000038000000A7000000FF0000003800000000000000000000
+            0038000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+            00FF000000FF000000FF000000FF000000FA0000003300000000000000000000
+            0038000000FF000000FF000000FF000000FF000000FF000000FF000000D60000
+            008E0000008E0000008E0000008E000000680000000800000000000000000000
+            002F000000F3000000FF000000FF000000FF000000FF000000CF000000160000
+            0000000000000000000000000000000000000000000000000000000000000000
+            00040000003D0000005500000055000000550000005500000019000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000
+          }
+          OnClick = btArqCertificadoClick
+          ShowHint = True
+          ParentFont = False
+          ParentShowHint = False
+        end
+      end
+    end
   end
   object pnRodape: TPanel
     Left = 0
     Height = 49
-    Top = 180
+    Top = 595
     Width = 700
     Align = alBottom
     BorderSpacing.Top = 15
@@ -293,5 +664,9 @@ object frConfig: TfrConfig
       }
       OnClick = btCancelarClick
     end
+  end
+  object OpenDialog1: TOpenDialog
+    Left = 152
+    Top = 16
   end
 end

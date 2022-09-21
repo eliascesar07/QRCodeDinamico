@@ -4,7 +4,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls,
-  Buttons, ACBrPIXCD, Grids, ActnList, ImgList;
+  Buttons, ACBrPIXCD, Grids, ActnList, PagamentoPIX, ImgList;
 
 type
 
@@ -20,11 +20,13 @@ type
 
   TfrPDV = class(TForm)
     aConfigurar: TAction;
+    aCancelarAnterior: TAction;
     aIncluirItem: TAction;
     aExcluirItem: TAction;
     aEfetuarPagamento: TAction;
     alAcoesPDV: TActionList;
     btEfetuarPagamento: TSpeedButton;
+    btCancelarAnterior: TSpeedButton;
     edClienteDoc: TEdit;
     edClienteNome: TEdit;
     edItemDescricao: TEdit;
@@ -35,6 +37,7 @@ type
     gbStatus: TGroupBox;
     gbTotal: TGroupBox;
     gdItens: TStringGrid;
+    Label1: TLabel;
     lbClienteDoc: TLabel;
     lbClienteNome: TLabel;
     lbItemDescricao: TLabel;
@@ -51,7 +54,8 @@ type
     pnTotalStr: TPanel;
     btItemIncluir: TSpeedButton;
     btItemExcluir: TSpeedButton;
-    btConfiguracao: TSpeedButton;
+    SpeedButton1: TSpeedButton;
+    procedure aCancelarAnteriorExecute(Sender: TObject);
     procedure aConfigurarExecute(Sender: TObject);
     procedure aEfetuarPagamentoExecute(Sender: TObject);
     procedure aExcluirItemExecute(Sender: TObject);
@@ -121,6 +125,19 @@ begin
   wC.ShowModal;
 end;
 
+procedure TfrPDV.aCancelarAnteriorExecute(Sender: TObject);
+var
+  wPix: TfrPagamentoPIX;
+begin
+  wPix := TfrPagamentoPIX.Create(Self);
+  if wPix.EstornarPagamento(VendaDados.UltPagamento_E2E, VendaDados.UltPagamento_Valor) then
+  begin
+    fVendaDados.UltPagamento_E2E := EmptyStr;
+    fVendaDados.UltPagamento_Valor := 0;
+    AvaliarInterface;
+  end;
+end;
+
 procedure TfrPDV.aExcluirItemExecute(Sender: TObject);
 begin
   if (MessageDlg('Deseja realmente excluir o Item?', mtConfirmation, mbOKCancel, 0) = mrNo) then
@@ -179,6 +196,8 @@ begin
   aExcluirItem.Enabled := (fVendaDados.Total > 0);
   aEfetuarPagamento.Enabled := (fVendaDados.Total > 0);
   aEfetuarPagamento.Visible := (fVendaDados.Total > 0);
+  aCancelarAnterior.Enabled := NaoEstaVazio(VendaDados.UltPagamento_E2E);
+  aCancelarAnterior.Visible := NaoEstaVazio(VendaDados.UltPagamento_E2E);
   pnTotalStr.Caption := FormatFloatBr(fVendaDados.Total, 'R$ ,0.00');
 end;
 
